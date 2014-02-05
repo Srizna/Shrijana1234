@@ -1,9 +1,0 @@
-.project
-.metadata
-bin/
-tmp/
-target/
-.classpath
-.settings/
-*.bak
-*.swp
