@@ -22,6 +22,7 @@ public class DateTest {
 		Date objFirstDate=new Date();
 		Date objSecondDate=new Date();
 		DateTest objTest=new DateTest();
+		objFirstDate.displayDate();
 		
 		objFirstDate.setDay(23);
 		objFirstDate.setMonth(12);
@@ -31,7 +32,7 @@ public class DateTest {
 		objSecondDate.setMonth(9);
 		objSecondDate.setYear(1990);
 		
-		objFirstDate.displayDate();
+		
 		objTest.display(objFirstDate);
 		objTest.display(objSecondDate);
 		

@@ -18,10 +18,10 @@ public class Date {
 	 */
 	public Date(){
 		Calendar date=Calendar.getInstance();
-		day=date.get(Calendar.DAY_OF_WEEK);
+		day=date.get(Calendar.DAY_OF_MONTH);
 		month=date.get(Calendar.MONTH);
 		year=date.get(Calendar.YEAR);
-		}
+	}
 	/**
 	 * This method sets the value for day.
 	 * @param day:defined day

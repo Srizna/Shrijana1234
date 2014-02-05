@@ -8,6 +8,7 @@ package com.lftechnology.training.oop;
  *
  */
 public class EmployeeTest {
+	double newSalary;
 	/**
 	 * This method displays the yearly salary of employee.
 	 * @author srizna
@@ -22,7 +23,10 @@ public class EmployeeTest {
 	 * @param employee:employee
 	 */
 	public void setSalaryRaise(Employee employee){
-		System.out.println("\n The salary of "+employee.getFirstName()+" with 10% raise is: " +(employee.getSalary()*0.1+employee.getSalary()));
+		newSalary=(employee.getSalary()*0.1+employee.getSalary());
+		System.out.println("\n The salary of "+employee.getFirstName()+" with 10% raise is: " +newSalary);
+		employee.setSalary(newSalary);
+		System.out.println("\n New salary is "+employee.getSalary());
 	}
 	public static void main(String[] arg){
 		Employee objFirstEmployee=new Employee("Ram","Sharma",15000);
@@ -36,6 +40,7 @@ public class EmployeeTest {
 		empTest.display(objSecondEmployee);
 		empTest.setSalaryRaise(objFirstEmployee);
 		empTest.setSalaryRaise(objSecondEmployee);
+		
 		
 		
 	}

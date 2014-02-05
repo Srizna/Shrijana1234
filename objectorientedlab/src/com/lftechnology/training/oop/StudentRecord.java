@@ -50,7 +50,7 @@ public class StudentRecord {
 				enterStudentRecord();
 			}
 		}
-		calculatePercentage(marks);
+		calculatePercentage();
 
 	}
 
@@ -59,7 +59,7 @@ public class StudentRecord {
 	 * @author srizna
 	 * @param marks;marks
 	 */
-	private static void calculatePercentage(double[] marks) {
+	private static void calculatePercentage() {
 		double result = 0.0;
 		
 		

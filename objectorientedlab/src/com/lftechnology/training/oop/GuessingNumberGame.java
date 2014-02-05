@@ -1,5 +1,6 @@
 package com.lftechnology.training.oop;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,6 +18,8 @@ import java.util.Scanner;
 public class GuessingNumberGame {
 	int number;
 	int attemptCounter = 0;
+	Scanner userInput = new Scanner(System.in);
+	static int randomValue=0;
 
 	/**
 	 * This method reads the {@link Integer} value ranges from 1-100.
@@ -24,25 +27,24 @@ public class GuessingNumberGame {
 	 * @author srizna
 	 */
 	public void enterNumber() {
-		Scanner userInput = new Scanner(System.in);
+		
 		System.out
 				.println("Enter the number ranges from 1-100 Or Press 0 to exit:");
 		try {
 			number = userInput.nextInt();
-		} catch (Exception e) {
+		} catch (InputMismatchException e) {
 			System.out.println("Enter valid number....");
 			enterNumber();
 		}
+		
+		
 		if (number == 0) {
 			System.out.println("Thank you...");
 			System.exit(0);
-		} else if (number <= 100 & number >= 1) {
+		} else if (number <= 100 && number >= 1) {
 			attemptCounter++;
-			Random randomNumber = new Random();
-			int randomValue = randomNumber.nextInt(100) + 1;
-			System.out.println(randomValue);
 			checkNumber(number, randomValue);
-		} else {
+			} else {
 			System.out
 					.println("Invalid number.Please enter number within range");
 			enterNumber();
@@ -60,19 +62,49 @@ public class GuessingNumberGame {
 	 *            :the generated random number.
 	 */
 	private void checkNumber(int number, int value) {
+		int repeatNumber;
 		if (number == value) {
 			System.out.println("Entered number: " + number + "\t"
 					+ "Random number generated: " + value);
 			System.out.println("Number of attempts: " + attemptCounter);
 			System.out.println("Entered number and Random number matched. ");
+			System.out.println("Want to Play again? Press 1 else 0:");
+			try{
+				repeatNumber= userInput.nextInt();
+			
+			if(repeatNumber==1){
+				generateRandomNumber();
+				enterNumber();
+			}else if(repeatNumber==0){
+				System.out.println("Thank you..");
+			}
+				else{
+					System.out.println("press valid number to continue Game");
+					repeatNumber= userInput.nextInt();
+				
+			}}catch(InputMismatchException e){
+				System.out.println("press valid input");
+				
+			}
+			
 		} else {
 			enterNumber();
 		}
 
 	}
+	/**
+	 * This method generate the random number ranges from 1-15.
+	 * @author srizna
+	 */
+	public void generateRandomNumber(){
+		Random randomNumber = new Random();
+		randomValue = randomNumber.nextInt(15) + 1;
+		
+	}
 
 	public static void main(String[] arg) {
 		GuessingNumberGame obj = new GuessingNumberGame();
+		obj.generateRandomNumber();
 		obj.enterNumber();
 
 	}
