@@ -25,7 +25,7 @@ public class FileCreate {
 				System.out.println("File created successfully");
 			}
 		} catch (IOException e) {
-			System.out.println("Fail to create file..");
+			System.out.println("Fail to create file...");
 		}
 
 		if (firstFile.isDirectory()) {
