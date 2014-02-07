@@ -3,6 +3,8 @@ package com.lftechnology.training.file;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Write a program to rename the given file, after renaming the file delete the renamed file.
@@ -16,6 +18,7 @@ import java.util.Scanner;
  * 
  */
 public class RenameFile {
+	private static final Logger LOGGER =Logger.getLogger(RenameFile.class.getName());
 	public static void main(String[] arg) throws IOException {
 		String path = "/home/srizna/";
 		Scanner inputFilename = new Scanner(System.in);
@@ -24,22 +27,22 @@ public class RenameFile {
 		File filename = new File(path + oldFilename);
 
 		if (filename.exists()) {
-			System.out.println("file exist with file name "
+			LOGGER.info("file exist with file name "
 					+ filename.getName());
 			System.out.println("Enter the new filename to rename:");
 			String newFilename = inputFilename.next();
 			File renameFilename = new File(path + newFilename);
 			filename.renameTo(renameFilename);
-			System.out.println("File " + filename.getName() + " renamed to "
+			LOGGER.info("File with name " + filename.getName() + " renamed to "
 					+ renameFilename.getName());
 			if (renameFilename.delete()) {
-				System.out.println("Renamed File deleted... ");
+				LOGGER.info("Renamed File deleted... ");
 			} else {
-				System.out.println("Fail to delete file..");
+				LOGGER.log(Level.SEVERE,"Fail to delete file..");
 			}
 
 		} else {
-			System.out.println("File  does not exist");
+			LOGGER.log(Level.SEVERE,"File  does not exist");
 		}
 
 	}

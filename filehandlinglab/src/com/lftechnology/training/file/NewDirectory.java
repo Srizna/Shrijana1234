@@ -2,6 +2,8 @@ package com.lftechnology.training.file;
 
 import java.io.File;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Write a program to create a directory and check whether the directory is created.
@@ -12,19 +14,20 @@ import java.util.Scanner;
  * @author srizna
  */
 public class NewDirectory {
+	private static final Logger LOGGER=Logger.getLogger(NewDirectory.class.getName());
 	public static void main(String[] arg) {
 		Scanner inputFilename = new Scanner(System.in);
 		System.out.println("Enter Absoulte path for creating directory: ");
 		String directoryName = inputFilename.next();
 		File file = new File(directoryName);
 		if (file.exists() && file.isDirectory()) {
-			System.out.println("Directory with this name: " + file.getName()
+			LOGGER.log(Level.SEVERE,"Directory with this name: " + file.getName()
 					+ " already exist");
 		} else {
 			if (file.mkdirs()) {
-				System.out.println("New Directory created successfully...");
+				LOGGER.info("New Directory created successfully...");
 			} else {
-				System.out.println("Fail to create directory");
+				LOGGER.log(Level.SEVERE,"Fail to create directory");
 			}
 		}
 	}
