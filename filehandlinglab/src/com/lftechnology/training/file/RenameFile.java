@@ -27,8 +27,8 @@ public class RenameFile {
 			String newFilename=inputFilename.next();
 			File renameFilename=new File(path+newFilename);
 			filename.renameTo(renameFilename);
-			System.out.println(renameFilename.getName());
-			renameFilename.delete();
+			System.out.println(filename.getName());
+			filename.delete();
 			System.out.println("Renamed File deleted... ");
 			
 		}else{

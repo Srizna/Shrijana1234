@@ -17,9 +17,9 @@ import java.io.IOException;
 public class FileCreate {
 	public static void main(String[] arg) {
 		File firstFile = new File("/home/srizna/abc.txt");
-		if(firstFile.exists()){
-			System.out.println("File already exist..");
-		}
+		if(firstFile.exists() && firstFile.isFile()){
+			System.out.println("File already exist \n With a filename: "+firstFile.getName()+" and is at the Path: "+firstFile.getAbsolutePath());
+		}else{
 		try {
 			if (firstFile.createNewFile()) {
 				System.out.println("File created successfully");
@@ -32,8 +32,8 @@ public class FileCreate {
 				System.out.println("This is a directory.");
 		} else if (firstFile.isFile()) {
 				System.out.println("This is a simple File not a directory.");
-				System.out.println("The filename is: " + firstFile.getName());
+				System.out.println("The file created with filename: " + firstFile.getName());
 				System.out.println("The absolute Path of the file is: "+ firstFile.getAbsolutePath());
-		}
+		}}
 		}
 }
