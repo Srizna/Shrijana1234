@@ -32,8 +32,7 @@ public class RenameFile {
 			filename.renameTo(renameFilename);
 			System.out.println("File " + filename.getName() + " renamed to "
 					+ renameFilename.getName());
-			filename = renameFilename;
-			if (filename.delete()) {
+			if (renameFilename.delete()) {
 				System.out.println("Renamed File deleted... ");
 			} else {
 				System.out.println("Fail to delete file..");
