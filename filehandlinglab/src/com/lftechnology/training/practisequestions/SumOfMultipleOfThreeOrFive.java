@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 public class SumOfMultipleOfThreeOrFive {
 	private static Logger LOGGER=Logger.getLogger(SumOfMultipleOfThreeOrFive.class.getName());
 	public static void main(String[] arg) {
+		LOGGER.info("Inside main method");
 		int sum = 0;
 		for (int i = 0; i < 1000; i++) {
 			if (i % 3 == 0 || i % 5 == 0) {
