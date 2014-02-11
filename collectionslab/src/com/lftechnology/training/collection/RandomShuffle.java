@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 /**
- * Write a program that uses Shuffle algorithm to print the words in its argument list in random order.
+ * 3.Write a program that uses Shuffle algorithm to print the words in its argument list in random order.
  *  Hint: Use List and Collection
  */
 /**
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  *
  */
 public class RandomShuffle {
-	private static Logger LOGGER = Logger.getLogger(RandomShuffle.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(RandomShuffle.class.getName());
 	public static void main(String[] args) {
 		LOGGER.info("Inside main method");
 		List<String> list=new ArrayList<>();

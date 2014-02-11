@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 /**
- *  Write a program that prints its arguments in random order. Do not make a copy of the argument array.
+ *4.  Write a program that prints its arguments in random order. Do not make a copy of the argument array.
  */
 
 /**
@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  */
 public class RandomListWithNoCopyValue {
-	private static Logger LOGGER=Logger.getLogger(RandomListWithNoCopyValue.class.getName());
+	private static final Logger LOGGER=Logger.getLogger(RandomListWithNoCopyValue.class.getName());
 	public static void main(String[]arg){
 		LOGGER.info("Iniside main method initializing list elements..");
 		List<String> list=new ArrayList<>();

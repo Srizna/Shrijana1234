@@ -10,7 +10,7 @@ import java.util.SortedSet;
 import java.util.logging.Logger;
 
 /**
- * Create an array list with 49 Integer objects containing the numbers 1 through 49. 
+ * 6.Create an array list with 49 Integer objects containing the numbers 1 through 49. 
  * It then randomly shuffles the list and selects the first 6 values from the shuffled list. 
  * Finally, it sorts the selected values and prints them out.
  *  Hint: Use ArrayList, Collections.shuffle(), ArrayList.subList(), and Collection.sort().
@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class ShuffledSortedList {
 
-	private static Logger LOGGER = Logger.getLogger(ShuffledSortedList.class
+	private static final Logger LOGGER = Logger.getLogger(ShuffledSortedList.class
 			.getName());
 
 	public static void main(String[] args) {

@@ -2,13 +2,13 @@ package com.lftechnology.training.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.logging.Logger;
 
 /**
- * Takes the words in its argument list and prints out any duplicate words, the number of distinct words,
+ * 1.Takes the words in its argument list and prints out any duplicate words, the number of distinct words,
  *  and a list of the words with duplicates eliminated. 
  *  Hint: Try with HashSet and List implementation.
  */
@@ -18,15 +18,15 @@ import java.util.logging.Logger;
  * 
  */
 public class ListPractise {
-	private static Logger LOGGER = Logger.getLogger(ListPractise.class
+	private static final Logger LOGGER = Logger.getLogger(ListPractise.class
 			.getName());
 
 	public static void main(String[] arg) {
 		int flag = 0;
-		int freq = 0;
 		LOGGER.info("Inside main method,initializing list elements..");
 		List<String> list = new ArrayList<>();
-		List<String> duplicateWordList = new ArrayList<>(list);
+		List<String> duplicateWordList = new ArrayList<>();
+		
 		list.add("apple");
 		list.add("banana");
 		list.add("cat");
@@ -34,6 +34,7 @@ public class ListPractise {
 		list.add("cat");
 		list.add("dog");
 		list.add("pop");
+		
 		LOGGER.info("Initial list: " + list);
 		for (String newList : list) {
 			if (Collections.frequency(list, newList) > 1
@@ -46,7 +47,8 @@ public class ListPractise {
 		LOGGER.info("Duplicate words are: " + duplicateWordList);
 		LOGGER.info("Number of distinct word is " + flag);
 
-		Set<String> uniqueList = new HashSet<>(list);
+		//displays t
+		Set<String> uniqueList = new TreeSet<>(list);
 		LOGGER.info("list with duplicates eliminated is: " + uniqueList);
 
 	}

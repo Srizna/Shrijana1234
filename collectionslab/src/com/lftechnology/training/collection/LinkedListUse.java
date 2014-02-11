@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /**
- * a. Create a linked list named one and two. 
+ * 5 a. Create a linked list named one and two. 
  b. Add some elements to both one (one, two, three, four, five) and two (six, seven, eight, nine, and ten). 
  c. Merge the words from two into one.
  d. Remove every second word from two.
@@ -20,13 +20,14 @@ import java.util.logging.Logger;
  * 
  */
 public class LinkedListUse {
-	private static Logger LOGGER = Logger.getLogger(LinkedListUse.class
+	private static final Logger LOGGER = Logger.getLogger(LinkedListUse.class
 			.getName());
 
 	public static void main(String[] arg) {
 		LOGGER.info("Inside main method. initializing lists...");
-		List<String> one = new LinkedList<>();
-		List<String> two = new LinkedList<>();
+		List<String> one = new LinkedList<String>();
+		List ones=new LinkedList();
+		List<String> two = new LinkedList<String>();
 		one.add("one");
 		one.add("two");
 		one.add("three");

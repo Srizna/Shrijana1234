@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 /**
- * Suppose you want to know which words in the argument list occur only once and which occur more than once,
+ *2. Suppose you want to know which words in the argument list occur only once and which occur more than once,
  * but you do not want any duplicates printed out repeatedly. 
  * This effect can be achieved by generating two sets one containing every word in the argument list and the other containing only the duplicates. 
  * The words that occur only once are the set difference of these two sets
@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  */
 public class SetUse {
-	private static Logger LOGGER=Logger.getLogger(SetUse.class.getName());
+	private static final Logger LOGGER=Logger.getLogger(SetUse.class.getName());
 	public static void main(String[]arg){
 		LOGGER.info("Inside main method,initializing list elements..");
 		List<String> list=new ArrayList<>();
