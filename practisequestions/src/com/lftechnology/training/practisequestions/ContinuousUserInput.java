@@ -7,7 +7,7 @@ import java.util.logging.Logger;
  */
 /**
  * This Class continously reads string from user until it reads quit to quit.
- * @author dell
+ * @author srizna
  *
  */
 public class ContinuousUserInput {
@@ -15,7 +15,7 @@ public class ContinuousUserInput {
 	/**
 	 * This enterString method reads the word from the user and determine whether it is defined string or not.
 	 */
-	public static void enterString(){
+	private static void enterString(){
 		LOGGER.info("Reading user input...");
 		Scanner userInput=new Scanner(System.in);
 		System.out.println("Enter the word you want to write:");

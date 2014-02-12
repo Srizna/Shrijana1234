@@ -7,23 +7,25 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 /**
- * This Class is just to understand how {@link Iterator} works and removes the element during iteration.
+ * This Class is just to understand how {@link Iterator} works and removes the
+ * element during iteration.
+ * 
  * @author srizna
- *
+ * 
  */
 public class IteratorPractiseQuestion {
-	private static final Logger LOGGER=Logger.getLogger(IteratorPractiseQuestion.class.getName());
+	private static final Logger LOGGER = Logger
+			.getLogger(IteratorPractiseQuestion.class.getName());
+
 	public static void main(String[] arg) {
-		int i = 0;
 		LOGGER.info("Inside main method.");
 		List<String> list = new ArrayList<String>();
 		Scanner input = new Scanner(System.in);
-		LOGGER.info("Reading datas from user..");		
-		while (i < 4) {
+		LOGGER.info("Reading datas from user..");
+		for (int j = 0; j < 4; j++) {
 			System.out.println("Enter four elements for list:");
 			String userInput = input.next();
 			list.add(userInput);
-			i++;
 		}
 		LOGGER.info("Initial List " + list);
 		Iterator iterator = list.iterator();

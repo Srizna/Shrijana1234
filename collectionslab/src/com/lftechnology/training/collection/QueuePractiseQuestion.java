@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 /**
  * This Class simply creates a {@link Queue} of type {@link String} and performs basic queue operations.
- * like peek(),poll(),add() and offer().
+ * like peek(),poll(),and offer().
  * @author srizna
  *
  */
@@ -27,7 +27,7 @@ public class QueuePractiseQuestion {
 		Iterator it = qe.iterator();
 
 		LOGGER.info("Initial Size of Queue :" + qe.size());
-
+	
 		LOGGER.info("Reading each value from queue..");
 		while (it.hasNext()) {
 			String iteratorValue = (String) it.next();

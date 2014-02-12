@@ -4,10 +4,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * This Class compares whwther the two arrays have the same contents or
+ * This Class compares whether the two arrays have the same contents or
  * not.(contents should be in same order).
  * 
- * @author dell
+ * @author srizna
  * 
  */
 public class CompareSameOrderArray {
@@ -24,9 +24,7 @@ public class CompareSameOrderArray {
 			for (int j = 0; j < array2.length; j++) {
 				if (array1[j] == array2[j]) {
 					flag++;
-				} else {
-					flag = 0;
-				}
+				} 
 			}
 			if (flag == array1.length) {
 				LOGGER.info("Both the arrays contain same contents in same order. ");
@@ -34,8 +32,7 @@ public class CompareSameOrderArray {
 				LOGGER.info("Both array's contents are in different order.");
 			}
 		} else {
-			LOGGER.log(Level.WARNING,
-					"length of the two different array is different");
+			LOGGER.log(Level.WARNING,"length of the two different array is different");
 		}
 	}
 }

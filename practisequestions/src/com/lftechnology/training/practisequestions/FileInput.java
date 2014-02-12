@@ -17,7 +17,7 @@ d.	Hi! Peter, the sum of 12 and 33.44 is 45.44
  * This Class reads the int ,double and string value from a file named "ini.txt"
  * and displays it as mentioned in question.
  * 
- * @author dell
+ * @author srizna
  * 
  */
 public class FileInput {

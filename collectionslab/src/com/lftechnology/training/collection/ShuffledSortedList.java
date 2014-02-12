@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 /**
  * This Class shuffled the given {@link List},use sublist function to get sublist of the
- * {@link List}t and finally {@link SortedSet}the list and displays each operation's output.
+ * {@link List}t and finally sort the list and displays each operation's output.
  * @author srizna
  * 
  */

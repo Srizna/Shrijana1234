@@ -1,5 +1,7 @@
 package com.lftechnology.training.practisequestions;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -9,7 +11,7 @@ import java.util.logging.Logger;
 /**
  * This Class compares two array's contents regardless of its order.
  * 
- * @author dell
+ * @author srizna
  * 
  */
 public class CompareDifferentOrderArrays {
@@ -18,18 +20,21 @@ public class CompareDifferentOrderArrays {
 
 	public static void main(String[] arg) {
 		LOGGER.info("Inside main method");
-		int[] array1 = { 1, 2, 3, 4, 5 };
-		int[] array2 = { 2, 5, 4, 3, 1 };
-		int temp = 0;
+		int[] array1 = { 1, 2, 1, 1, 1 };
+		int[] array2 = { 1, 2, 1, 1, 1 };
+		List<Integer> temporaryList = new LinkedList<Integer>();
 		int flag = 0;
 		LOGGER.info("Comparing array's lengths and its elements.");
 		if (array1.length == array2.length) {
 			for (int i = 0; i < array1.length; i++) {
 				for (int j = 0; j < array2.length; j++) {
 					System.out.println(array1[i] + "\t" + array2[j]);
-					if (array1[i] == array2[j] && temp != array1[i]) {
+					if (array1[i] == array2[j] &&(!temporaryList.contains(j))) {
 						flag++;
-						temp = array1[i];
+						System.out.println(flag);
+						temporaryList.add(j);
+						System.out.println(temporaryList);
+						break;
 					}
 				}
 			}
