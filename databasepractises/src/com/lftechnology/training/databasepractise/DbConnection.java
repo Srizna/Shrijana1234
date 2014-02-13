@@ -34,6 +34,7 @@ public class DbConnection {
 	public static Connection getConnection() {
 		return con;
 	}
+	
 	private static void closeConnection(){
 		if(con!=null){
 			try {

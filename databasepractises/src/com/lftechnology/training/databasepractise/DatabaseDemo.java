@@ -167,7 +167,6 @@ public class DatabaseDemo {
 	 */
 	public static void main(String[] arg) {
 		LOGGER.info("Inside main method");
-		
 		DbConnection connectionObject = new DbConnection();
 		con = connectionObject.getConnection();
 		DatabaseDemo demoClassObject = new DatabaseDemo();
