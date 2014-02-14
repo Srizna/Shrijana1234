@@ -18,11 +18,10 @@ public class DbConnection {
 	private static Connection con;
 
 	public DbConnection() {
-		LOGGER.info("Establishing Connection....");
+		LOGGER.info("Establishing Connection...");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost/lftraining", "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/lftraining", "root", "root");
 			LOGGER.info("Connection Establised");
 		} catch (ClassNotFoundException | SQLException e) {
 			LOGGER.info(e.getClass().getSimpleName() + " DbConnection.");

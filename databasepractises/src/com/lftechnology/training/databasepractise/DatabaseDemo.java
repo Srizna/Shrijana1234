@@ -41,8 +41,7 @@ public class DatabaseDemo {
 				String name = result.getString("empname");
 				String address = result.getString("address");
 				double salary = result.getDouble("salary");
-				LOGGER.info("EmpId is " + id + "\t" + "Emp Name is "+ name + "\t" + "Address is " + address + "\t"
-						+ "Salary is " + salary);
+				LOGGER.info("EmpId is " + id + "\t" + "Emp Name is "+ name + "\t" + "Address is " + address + "\t"+ "Salary is " + salary);
 			}
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE,e.getClass().getSimpleName() + " inside select query");
@@ -92,7 +91,7 @@ public class DatabaseDemo {
 			if(statement.executeUpdate()==1){
 				LOGGER.info("data inserted successfully...");
 			}else{
-				LOGGER.info( "Data does not inserted");
+				LOGGER.info( "Data  not inserted");
 			}
 
 		} catch (SQLException e) {
@@ -107,8 +106,7 @@ public class DatabaseDemo {
 	 */
 	public void enterOption() {
 		int userChoice = 0;
-		System.out
-				.println("Enter the option to perform respective operations.."
+		System.out.println("Enter the option to perform respective operations.."
 						+ "\n" + "1.To view list of employees" + "\n"
 						+ "2.To delete employee" + "\n"
 						+ "3.To insert employee values");
