@@ -1,5 +1,6 @@
 package com.lftechnology.training.databasepractise;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +20,8 @@ public class DatabaseDemo {
 
 	private static final Logger LOGGER = Logger.getLogger(DatabaseDemo.class.getName());
 	private static Connection con;
-	private static PreparedStatement statement;
+	private static PreparedStatement statement=null;
+	private static CallableStatement cs=null;
 	private static ResultSet result;
 	private static String query;
 	static Scanner input = new Scanner(System.in);
@@ -28,6 +30,7 @@ public class DatabaseDemo {
 	 * This selectDataFromDatabase method executes select query to list out the all the rows from the table.
 	 * @author srizna
 	 */
+	
 	public void selectDataFromDatabase() {
 		query = "Select * from employee";
 		try {
@@ -47,7 +50,40 @@ public class DatabaseDemo {
 			LOGGER.log(Level.SEVERE,e.getClass().getSimpleName() + " inside select query");
 		}
 	}
-
+	public void functionCall(){
+		int id=3;
+		try {
+			cs=con.prepareCall("{?=call func(?)}");
+			cs.registerOutParameter(1,java.sql.Types.VARCHAR);
+			cs.setInt(2,id);
+			cs.execute();
+			String outParam = cs.getString(1);
+			System.out.println("The employee name recieved from function call is "+outParam);
+		} catch (SQLException e) {
+			
+			LOGGER.log(Level.SEVERE,e.getClass().getSimpleName() + " inside functioncall");
+		}
+		
+	}
+	/*public void procedureCall(){
+		int id=3;
+		String getDBUSERByUserIdSql="{?=call use_procedure(?)}";
+		try {
+			cs = con.prepareCall(getDBUSERByUserIdSql);
+			 
+			
+			cs.registerOutParameter(1, java.sql.Types.VARCHAR);
+			cs.setInt(2, 3);
+			cs.execute();
+			 
+			String outParam = cs.getString(1);
+			System.out.println(outParam);
+		} catch (SQLException e) {
+			
+			LOGGER.log(Level.SEVERE,e.getClass().getSimpleName() + " inside procedurecall");
+		}
+		
+	}*/
 	/**
 	 * THis deleteDataFromDatabase method executes delete query to delete the record according to user's input employee id.
 	 * @author srizna
@@ -168,6 +204,8 @@ public class DatabaseDemo {
 		DbConnection connectionObject = new DbConnection();
 		con = connectionObject.getConnection();
 		DatabaseDemo demoClassObject = new DatabaseDemo();
+		//demoClassObject.procedureCall();
+		demoClassObject.functionCall();
 		if(con!=null){
 		demoClassObject.enterOption();
 		}

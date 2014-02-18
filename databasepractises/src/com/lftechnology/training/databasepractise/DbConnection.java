@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class DbConnection {
 
-	private static final Logger LOGGER = Logger.getLogger(DatabaseDemo.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(DbConnection.class.getName());
 	private static Connection con;
 
 	public DbConnection() {
